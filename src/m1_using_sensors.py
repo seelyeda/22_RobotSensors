@@ -3,21 +3,21 @@ This module lets you practice the use of robot sensors.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Dave Seelye Aaron Emmerich.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import ev3dev.ev3 as ev3
 import time
 import math
 
 # -----------------------------------------------------------------------------
-# TODO 2:  With your instructor, do quiz questions 1 through 5.
+# DONE 2:  With your instructor, do quiz questions 1 through 5.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
-# TODO 3:  With your instructor, do quiz questions 6 through XXX.
+# DONE 3:  With your instructor, do quiz questions 6 through XXX.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
@@ -29,7 +29,7 @@ def main():
     # run_test_go_straight_for_seconds()
     # run_test_go_straight_for_inches_using_time()
     # run_test_go_straight_for_inches_using_sensor()
-    # run_test_raise_arm()
+    run_test_raise_arm()
     # run_test_lower_arm()
     # run_test_go_straight_until_black()
     # run_test_go_forward_until_distance_is_less_than()
@@ -43,7 +43,7 @@ def run_test_beep_and_tone():
        -- tone method of the ToneMaker class
     """
     # -------------------------------------------------------------------------
-    # TODO: 4.  Implement and test this method.
+    # DONE: 4.  Implement and test this method.
     # -------------------------------------------------------------------------
     # IMPORTANT:
     #   For testing the   beep   method,
@@ -57,10 +57,13 @@ def run_test_beep_and_tone():
     #   in increments of 10, with 50 millisecond durations.
     #   Do not forget to apply the   wait   method to tone, as usual.
     # -------------------------------------------------------------------------
-
+    b = Beeper()
+    for i in range(10):
+        b.beep().wait()
+        time.sleep(0.25)
 
 # -----------------------------------------------------------------------------
-# TODO 5:  With your instructor, do quiz questions XXX through XXX.
+# DONE 5:  With your instructor, do quiz questions XXX through XXX.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
@@ -99,6 +102,8 @@ def run_test_go_straight_for_seconds():
     # TODO: 6.  Run the above tests.  Be sure to understand the
     #              go_straight_for_seconds   method of   DriveSystem.
     # -------------------------------------------------------------------------
+    car = DriveSystem()
+    car.go_straight_for_inches_using_time(4, 42)
 
 
 def run_test_go_straight_for_inches_using_time():
@@ -137,7 +142,7 @@ def run_test_go_straight_for_inches_using_time():
 
 
 # -----------------------------------------------------------------------------
-# TODO 8:  With your instructor, do quiz questions XXX through XXX.
+# DONE 8:  With your instructor, do quiz questions XXX through XXX.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
@@ -224,7 +229,8 @@ def run_test_raise_arm():
     #      raise_arm    method of   DriveSystem.
     #      The tests are already written for you -- READ THEM (above).
     # -------------------------------------------------------------------------
-
+    claw = run_test_raise_arm()
+    claw.
 
 def run_test_lower_arm():
     """ Tests the   lower_arm   method of ArmAndClaw. """
@@ -387,7 +393,8 @@ class DriveSystem(object):
 #   -- TouchSensor
 #   -- ColorSensor
 #   -- IR_DistanceSensor
-#   --
+#   -- Beeper
+#   -- Tone maker
 # USE them, but do NOT modify them.
 ###############################################################################
 class Motor(object):
