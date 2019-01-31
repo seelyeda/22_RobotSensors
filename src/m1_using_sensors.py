@@ -199,7 +199,7 @@ def run_test_raise_arm():
     print('--------------------------------------------------')
 
     # Need these for all the tests:
-    arm_and_claw = ArmAndClaw()
+    #arm_and_claw = ArmAndClaw()
     beeper = Beeper()
 
     # Test 1: Raise arm.  Nothing will happen if it is already raised.
@@ -208,7 +208,7 @@ def run_test_raise_arm():
     print('After the beep, I will raise the arm.')
     input('Press the ENTER key to continue.')
     beeper.beep()
-    arm_and_claw.raise_arm()
+    #arm_and_claw.raise_arm()
 
     # Test 2: Lower the arm a bit and then raise arm.
     print()
@@ -217,12 +217,12 @@ def run_test_raise_arm():
     input('Press the ENTER key to continue.')
     beeper.beep()
 
-    arm_and_claw.motor.turn_on(-100)
+    #arm_and_claw.motor.turn_on(-100)
     time.sleep(2)
-    arm_and_claw.motor.turn_off()
+    #arm_and_claw.motor.turn_off()
 
     time.sleep(2)
-    arm_and_claw.raise_arm()
+    #arm_and_claw.raise_arm()
 
     # -------------------------------------------------------------------------
     # TODO: 11.  With your instructor, implement the
@@ -230,7 +230,7 @@ def run_test_raise_arm():
     #      The tests are already written for you -- READ THEM (above).
     # -------------------------------------------------------------------------
     claw = run_test_raise_arm()
-    claw.
+    claw.go()
 
 def run_test_lower_arm():
     """ Tests the   lower_arm   method of ArmAndClaw. """
@@ -240,7 +240,7 @@ def run_test_lower_arm():
     print('--------------------------------------------------')
 
     # Need these for all the tests:
-    arm_and_claw = ArmAndClaw()
+    #arm_and_claw = ArmAndClaw()
     beeper = Beeper()
 
     # Test 1: Raise arm.  Nothing will happen if it is already raised.
@@ -251,9 +251,9 @@ def run_test_lower_arm():
     input('Press the ENTER key to continue.')
     beeper.beep()
 
-    arm_and_claw.raise_arm()
+    #arm_and_claw.raise_arm()
     time.sleep(1)
-    arm_and_claw.lower_arm()
+    #arm_and_claw.lower_arm()
 
     # Test 2: Raise the arm a bit and then lower arm.
     print()
@@ -262,12 +262,12 @@ def run_test_lower_arm():
     input('Press the ENTER key to continue.')
     beeper.beep()
 
-    arm_and_claw.motor.turn_on(100)
+    #arm_and_claw.motor.turn_on(100)
     time.sleep(4)
-    arm_and_claw.motor.turn_off()
+    #arm_and_claw.motor.turn_off()
 
     time.sleep(2)
-    arm_and_claw.lower_arm()
+    #arm_and_claw.lower_arm()
 
     # -------------------------------------------------------------------------
     # TODO: 12.  With your instructor, implement the
